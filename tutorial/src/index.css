@@ -1,0 +1,8 @@
+.active{
+  background-color: blue;
+  transition: background-color 1s ease;
+}
+img{
+  width: 100px;
+  height: auto;
+}
