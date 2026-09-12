@@ -1,0 +1,125 @@
+body{
+  box-sizing: border-box;
+  margin: 0;
+  max-width: 100vw;
+  min-height: 100vh;
+  font-family: Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(to bottom, black 40%, hsla(0, 0%, 0%, 0.863) 100%);
+}
+
+.movieSection {
+  position: relative;
+}
+
+.Card{
+  border: 1px solid hsla(0, 0%, 54%, 0.26);
+  width: 15em;
+  height: 20em;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: end;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.Card:hover{
+  transform: scale(1.03);
+}
+
+.Card h2, .Card span, .Card p{
+  margin: 0;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+  color: white;
+  font-size: 1rem;
+}
+
+.showCards{
+
+  display: flex;
+  padding: 0 1em;
+  margin-bottom: 1em;
+  min-height: 23em;
+  align-items: center;
+  gap: 20px;
+  overflow-x: hidden  ;
+  scroll-behavior: smooth;
+}
+
+.showCards > *{
+  flex-shrink: 0;
+}
+
+.sideButton{
+  position: absolute;
+  top: 50%;
+  background-color: aliceblue;
+  border-radius: 50%;
+  border: none;
+  width: 2em;
+  height: 2em;
+  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+.sideButton:hover{
+  transform: scale(1.3);
+  cursor: pointer;
+  background-color: black;
+  color: aliceblue;
+}
+
+.sideButton:first-child {
+  left: 10px;
+}
+
+.sideButton:last-child {
+  right: 10px;
+}
+
+.headerDiv{
+  display: flex;
+  color: white;
+}
+.headerDiv img{
+  height: 30em;
+  width: auto;
+  mask-image:
+    linear-gradient(to right, transparent 0%, black 25%, black 100%),
+    linear-gradient(to top, transparent 0%, black 25%, black 100%);
+
+  mask-composite: intersect;
+}
+.headerImage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    black 40%,
+    hsla(0, 0%, 0%, 0.863) 100%
+  );
+}
+
+.headerDesc {
+  padding: 2em;
+}
+.headerDesc h1{
+  font-size: 4em;
+  margin: 0;
+  margin-top: 1em;
+}
+.headerDesc p{
+  padding-bottom: 1em;
+}
+#title{
+  color: white;
+  margin: 0;
+  padding: 0;
+  margin-left: 1em;
+}
