@@ -1,0 +1,50 @@
+body{
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Calc{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(69, 77, 185, 0.253);
+  min-width: 20vw;
+  min-height: 30vw;
+  padding: 2em;
+}
+.Calc > div:first-child {
+    background-color: hsla(0, 0%, 0%, 0.11);
+    margin-bottom: 1em;
+    padding-right: 1em;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-align: end;
+}
+.Calc > div:last-child {
+    background-color: hsla(0, 0%, 0%, 0.11);
+    flex: 1;
+    padding: 1em;
+}
+button {
+  margin: 0.2em;
+   width: 1.5em;
+  /*min-height: 5em; */
+  font-size: 50px;
+  padding: 15px;
+  font-weight: bold;
+  outline: none;
+  border: none;
+  background-color: hsla(208, 100%, 97%, 0.404);
+  color: white;
+}
+h1, h5{
+  margin:0;
+}
+h5{
+  color: rgba(255, 255, 255, 0.651);
+}
