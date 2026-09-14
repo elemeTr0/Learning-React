@@ -37,11 +37,10 @@ export default function Page({ movies, selectMovie, title }: PageProps) {
       />
 
       <div className="showCards" ref={movieList}>
-  {movies.map((movie, index) => (
+  {movies.map((movie) => (
     <Card
       key={movie.id}
       movie={movie}
-      index={index}
       selectMovie={selectMovie}
     />
   ))}

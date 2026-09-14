@@ -5,30 +5,34 @@ interface Movie {
   poster_path: string | null;
   release_date: string;
   vote_average: number;
-  backdrop_path: string
+  backdrop_path: string;
 }
 
 interface CardProps {
   movie: Movie;
-  index: number;
-  selectMovie: (c: number) => void;
+  selectMovie: (id: number) => void;
 }
 
-export default function Card({  movie, index, selectMovie }: CardProps) {
+export default function Card({ movie, selectMovie }: CardProps) {
 
-    function handleClick(){
-        selectMovie(index)
-    }
-    const rating = movie.vote_average;
-    const year: string[] = movie.release_date.split('-')
+  function handleClick() {
+    selectMovie(movie.id);
+  }
+
+  const rating = movie.vote_average;
+  const year: string[] = movie.release_date.split('-');
+
   return (
-    <div className="Card" onClick={handleClick} style={{
-    backgroundImage: `linear-gradient(to bottom, transparent 40%, black 100%),url(https://image.tmdb.org/t/p/w500${movie.poster_path})`
-  }}>
-        <h2>{movie.title}</h2>
-        <span>({year[0]})</span> 
-        <p>{rating.toPrecision(2)}⭐</p>
+    <div
+      className="Card"
+      onClick={handleClick}
+      style={{
+        backgroundImage: `linear-gradient(to bottom, transparent 40%, black 100%), url(https://image.tmdb.org/t/p/w500${movie.poster_path})`
+      }}
+    >
+      <h2>{movie.title}</h2>
+      <span>({year[0]})</span>
+      <p>{rating.toPrecision(2)}⭐</p>
     </div>
-      
   );
 }
